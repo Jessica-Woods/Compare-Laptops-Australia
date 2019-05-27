@@ -3,10 +3,11 @@ nav a {
     font-family: Helvetica, Arial san-serif;
     color: #6DBBAA;
     text-decoration: none;
-    padding: 1em;
-    margin: -2.7px;
     font-weight: bold;
     font-size: 15px;
+
+    padding: 1em;
+    margin: -2.7px;
 
     border-top-style: solid;
     border-top-width: 0.1em;
@@ -85,10 +86,6 @@ div {
 
 .graph {
     background-color: rgb(255, 255, 255, 0.2);
-    padding-top: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 30px;
     stroke-width: 1.5px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -106,22 +103,28 @@ table {
     border-collapse: collapse;
 }
 
-table th{
+table th {
     background-color: rgba(253, 161, 2, 0.200);
     min-height: 100px;
     color: white;
     padding: 5px;
     text-align: center;
 }
-table td{
+table td {
     padding: 5px;
     text-align: left;
 }
-table tr:hover{
+table tr:hover {
     background-color:  rgb(255, 255, 255, 0.1);
 }
 tr:nth-child(even) {
     background-color: rgba(145, 132, 132, 0.404);
+}
+
+.table-link {
+    font-family: Helvetica, Arial san-serif;
+    color: #6DBBAA;
+    text-decoration: none;
 }
 
 /* Footer Styling */

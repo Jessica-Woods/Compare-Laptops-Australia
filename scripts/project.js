@@ -29,10 +29,10 @@ function createChart(data) {
   var canvasHeight = 600;
 
   var margin = {
-    top: 30,
-    right: 60,
-    left: 60,
-    bottom: 20
+    top: 40,
+    right: 85,
+    left: 85,
+    bottom: 50
   };
 
   var w = canvasWidth - margin.left - margin.right;
@@ -42,15 +42,26 @@ function createChart(data) {
       .append('svg')
       .attr('class', 'graph')
       .attr('width', canvasWidth)
-      .attr('height', canvasHeight)
+      .attr('height', canvasHeight);
+
+    var innerCanvas = svg
       .append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-  return [svg, w, h];
+
+    // Add a "data last updated" label
+    svg
+      .append('text')
+      .attr('x', canvasWidth - 5)
+      .attr('y', canvasHeight - 5)
+      .style('fill', d3.color('#3A3535'))
+      .attr('text-anchor', 'end')
+      .text('Data last updated: 26/05/2019');
+
+  return [innerCanvas, w, h];
 }
 
 function renderLaptopChart(svg, w, h, dimensions, data, table) {
-
   var xScale =
     d3.scalePoint()
       .domain(Object.keys(dimensions))
@@ -233,6 +244,8 @@ function createTable(data, dimensions) {
       .text(dimensions[dim].name);
   });
 
+  tableHeader.append('th').text('Link');
+
   return table;
 }
 
@@ -264,6 +277,15 @@ function renderTable(table, dimensions, data) {
 
           row.append('td').text(value);
         });
+
+        // Extra non-dimensional fields
+        row
+          .append('td')
+          .append('a')
+          .attr('href', laptop.url)
+          .attr('class', 'table-link')
+          .text('Details (external)');
+
       });
   };
 
