@@ -51,7 +51,6 @@ function createChart(data) {
 
 function renderLaptopChart(svg, w, h, dimensions, data, table) {
 
-
   var xScale =
     d3.scalePoint()
       .domain(Object.keys(dimensions))
@@ -96,7 +95,7 @@ function renderLaptopChart(svg, w, h, dimensions, data, table) {
   // Draw our paths
   svg
     .selectAll('path.laptop')
-    .data(data)
+    .data(data, d => d.url)
     .enter()
     .append('path')
     .attr('class', 'laptop')
