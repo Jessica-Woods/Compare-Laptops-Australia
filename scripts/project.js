@@ -255,7 +255,7 @@ function renderTable(table, dimensions, data) {
     return laptop.inAllBrushes === true || laptop.inAllBrushes === undefined;
   });
 
-  activeData.sort((a, b) => d3.ascending(a.name, b.name));
+  activeData.sort((a, b) => d3.descending(+a.price_aud, +b.price_aud));
 
   var onEnter = enter => {
     enter
