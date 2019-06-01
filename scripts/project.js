@@ -289,9 +289,13 @@ function renderTable(table, dimensions, data) {
       });
   };
 
+  // We call data with `laptop.url` as the index as we can't rely on the position
+  // in the array since we sort it. If we don't use an index it causes weird issues
+  // where laptop names are duplicated in the table depending on the order they are
+  // added/removed and their relative sort order
   table
     .selectAll('tr.laptop')
-    .data(activeData)
+    .data(activeData, laptop => laptop.url)
     .join(onEnter);
 }
 
