@@ -353,8 +353,8 @@ function getDimensions() {
       scaleType: 'point',
       sortFunction: (a, b) => {
         return d3.ascending(a.graphics_card.model_power, b.graphics_card.model_power) ||
-          d3.ascending(a.graphics_card.model_number, a.graphics_card.model_number) ||
-          d3.ascending(a.graphics_card.memory_gbs || 0 , b.graphics_card.memory_gbs || 0);
+          d3.ascending(+a.graphics_card.model_number, +b.graphics_card.model_number) ||
+          d3.ascending(+a.graphics_card.memory_gbs || 0 , +b.graphics_card.memory_gbs || 0);
       }
     },
     weight_kgs: {
