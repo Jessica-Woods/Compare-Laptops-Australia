@@ -8,7 +8,7 @@ The goal of this website is to help Australians find the perfect laptop.
 
 # Opening the website
 
-Click [here](https://silvantica.github.io/Compare-Laptops-Australia) to visit the hosted version of this repo.
+Click [here](https://jessica-woods.github.io/Compare-Laptops-Australia/) to visit the hosted version of this repo.
 
 If you have a clone of this repo. Just open `index.html` in any browser. 
 
